@@ -15,8 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet var sliderGreenColor: UISlider!
     @IBOutlet var sliderBlueColor: UISlider!
     
-    
     @IBOutlet var redColorLevel: UILabel!
+    @IBOutlet var greenColorLevel: UILabel!
+    @IBOutlet var blueColorLevel: UILabel!
     
     
     override func viewDidLoad() {
@@ -26,11 +27,17 @@ class ViewController: UIViewController {
         
 
     }
-
-    @IBAction func redColorChange() {
-        
-        //colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor), alpha: 1)
-    }
+//    private func changeColor() {
+//
+//     colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
+//}
+//
+//    @IBAction func colorChange() {
+//        changeColor()
+//    }
+    //    @IBAction func ColorChange() {
+//        changeColor()
+//    }
     
     private func setupSlider() {
         sliderRedColor.value = 0.5
@@ -39,6 +46,20 @@ class ViewController: UIViewController {
         sliderRedColor.minimumTrackTintColor = .red
         sliderRedColor.maximumTrackTintColor = .white
         sliderRedColor.thumbTintColor = .green
+        
+        sliderGreenColor.value = 0.5
+        sliderGreenColor.minimumValue = 0
+        sliderGreenColor.maximumValue = 1
+        sliderGreenColor.minimumTrackTintColor = .green
+        sliderGreenColor.maximumTrackTintColor = .white
+        sliderGreenColor.thumbTintColor = .green
+        
+        sliderBlueColor.value = 0.5
+        sliderBlueColor.minimumValue = 0
+        sliderBlueColor.maximumValue = 1
+        sliderBlueColor.minimumTrackTintColor = .blue
+        sliderBlueColor.maximumTrackTintColor = .green
+
     }
 }
 
