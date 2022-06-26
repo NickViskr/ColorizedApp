@@ -24,14 +24,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         colorArea.layer.cornerRadius = 15
         setupSlider()
-        
-
+        setupTexLabel()
     }
 
     @IBAction func sliderAction() {
-        colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
+        colorChange()
+        labelValueSetting()
     }
 
+    private func setupTexLabel() {
+        redColorLevel.text = String(sliderRedColor.value)
+        greenColorLevel.text = String(sliderGreenColor.value)
+        blueColorLevel.text = String(sliderBlueColor.value)
+    }
     
     private func setupSlider() {
         sliderRedColor.value = 0.5
@@ -56,5 +61,16 @@ class ViewController: UIViewController {
         sliderBlueColor.thumbTintColor = .green
 
     }
+    
+    private func colorChange() {
+        colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
+    }
+    
+    private func labelValueSetting() {
+        redColorLevel.text = "\(round((sliderRedColor.value)*100)/100)"
+        greenColorLevel.text = "\(round((sliderGreenColor.value)*100)/100)"
+        blueColorLevel.text = "\(round((sliderBlueColor.value)*100)/100)"
+    }
+  
 }
 
