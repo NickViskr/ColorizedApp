@@ -27,17 +27,11 @@ class ViewController: UIViewController {
         
 
     }
-//    private func changeColor() {
-//
-//     colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
-//}
-//
-//    @IBAction func colorChange() {
-//        changeColor()
-//    }
-    //    @IBAction func ColorChange() {
-//        changeColor()
-//    }
+
+    @IBAction func sliderAction() {
+        colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
+    }
+
     
     private func setupSlider() {
         sliderRedColor.value = 0.5
@@ -58,7 +52,8 @@ class ViewController: UIViewController {
         sliderBlueColor.minimumValue = 0
         sliderBlueColor.maximumValue = 1
         sliderBlueColor.minimumTrackTintColor = .blue
-        sliderBlueColor.maximumTrackTintColor = .green
+        sliderBlueColor.maximumTrackTintColor = .white
+        sliderBlueColor.thumbTintColor = .green
 
     }
 }
