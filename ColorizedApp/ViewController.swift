@@ -23,8 +23,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorArea.layer.cornerRadius = 15
-        setupSlider()
+//        setupSlider()
         setupTexLabel()
+        colorChange()
+        labelValueSetting()
     }
 
     @IBAction func sliderAction() {
@@ -38,38 +40,38 @@ class ViewController: UIViewController {
         blueColorLevel.text = String(sliderBlueColor.value)
     }
     
-    private func setupSlider() {
-        sliderRedColor.value = 0.5
-        sliderRedColor.minimumValue = 0
-        sliderRedColor.maximumValue = 1
-        sliderRedColor.minimumTrackTintColor = .red
-        sliderRedColor.maximumTrackTintColor = .white
-        sliderRedColor.thumbTintColor = .green
-        
-        sliderGreenColor.value = 0.5
-        sliderGreenColor.minimumValue = 0
-        sliderGreenColor.maximumValue = 1
-        sliderGreenColor.minimumTrackTintColor = .green
-        sliderGreenColor.maximumTrackTintColor = .white
-        sliderGreenColor.thumbTintColor = .green
-        
-        sliderBlueColor.value = 0.5
-        sliderBlueColor.minimumValue = 0
-        sliderBlueColor.maximumValue = 1
-        sliderBlueColor.minimumTrackTintColor = .blue
-        sliderBlueColor.maximumTrackTintColor = .white
-        sliderBlueColor.thumbTintColor = .green
-
-    }
+//    private func setupSlider() {
+//        sliderRedColor.value = 0.5
+//        sliderRedColor.minimumValue = 0
+//        sliderRedColor.maximumValue = 1
+//        sliderRedColor.minimumTrackTintColor = .red
+//        sliderRedColor.maximumTrackTintColor = .white
+//        sliderRedColor.thumbTintColor = .green
+//
+//        sliderGreenColor.value = 0.5
+//        sliderGreenColor.minimumValue = 0
+//        sliderGreenColor.maximumValue = 1
+//        sliderGreenColor.minimumTrackTintColor = .green
+//        sliderGreenColor.maximumTrackTintColor = .white
+//        sliderGreenColor.thumbTintColor = .green
+//
+//        sliderBlueColor.value = 0.5
+//        sliderBlueColor.minimumValue = 0
+//        sliderBlueColor.maximumValue = 1
+//        sliderBlueColor.minimumTrackTintColor = .blue
+//        sliderBlueColor.maximumTrackTintColor = .white
+//        sliderBlueColor.thumbTintColor = .green
+//
+//    }
     
     private func colorChange() {
         colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
     }
     
     private func labelValueSetting() {
-        redColorLevel.text = "\(round((sliderRedColor.value)*100)/100)"
-        greenColorLevel.text = "\(round((sliderGreenColor.value)*100)/100)"
-        blueColorLevel.text = "\(round((sliderBlueColor.value)*100)/100)"
+        redColorLevel.text = "\(round((sliderRedColor.value) * 100) / 100)"
+        greenColorLevel.text = "\(round((sliderGreenColor.value) * 100) / 100)"
+        blueColorLevel.text = "\(round((sliderBlueColor.value) * 100) / 100)"
     }
   
 }
