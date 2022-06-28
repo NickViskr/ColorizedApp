@@ -65,13 +65,17 @@ class ViewController: UIViewController {
 //    }
     
     private func colorChange() {
-        colorArea.backgroundColor = UIColor(red: CGFloat(sliderRedColor.value), green: CGFloat(sliderGreenColor.value), blue: CGFloat(sliderBlueColor.value), alpha: 1)
+        colorArea.backgroundColor =
+        UIColor(red: CGFloat(sliderRedColor.value),
+                green: CGFloat(sliderGreenColor.value),
+                blue: CGFloat(sliderBlueColor.value),
+                alpha: 1)
     }
     
     private func labelValueSetting() {
-        redColorLevel.text = "\(round((sliderRedColor.value) * 100) / 100)"
-        greenColorLevel.text = "\(round((sliderGreenColor.value) * 100) / 100)"
-        blueColorLevel.text = "\(round((sliderBlueColor.value) * 100) / 100)"
+        redColorLevel.text = String(format: "%.2f", sliderRedColor.value)
+        greenColorLevel.text = String(format: "%.2f", sliderGreenColor.value)
+        blueColorLevel.text = String(format: "%.2f", sliderBlueColor.value)
     }
   
 }
